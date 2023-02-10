@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject groundChecker;
     public LayerMask whatIsGround;
 
-    float maxSpeed  = 5.0f;
+    float maxSpeed  = 10.0f;
     bool isOnGround = false;
 
     //Create a reference to the Rigidbody2D so we can manipulate it
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         //Set movementValueX to 1.0f, so that we always run forward and no longer care about player input
         float movementValueX = 1.0f;
-        
+
         //Change the X velocity of the Rigidbody2D to be equal to the movement value
         playerObject.velocity = new Vector2 (movementValueX, playerObject.velocity.y); 
 
