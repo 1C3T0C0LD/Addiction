@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour
     public GameObject groundChecker;
     public LayerMask whatIsGround;
 
+    public AudioClip jump;
+    public AudioClip backgroundMusic;
+
+    public AudioSource sfxPlayer;
+    public AudioSource musicPlayer;
+
     float maxSpeed  = 10.0f;
     bool isOnGround = false;
 
@@ -16,6 +22,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+         musicPlayer.clip = backgroundMusic;
+      musicPlayer.loop = true;
+      musicPlayer.Play();
+      
         //Find the RigidBody2D component that is attached to the same object as this script
         playerObject = GetComponent<Rigidbody2D>();
     }
@@ -45,8 +55,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
-            playerObject.AddForce(new  Vector2(0.0f, 100.0f));
+            playerObject.AddForce(new  Vector2(0.0f, 300.0f));
         }
-
     }
+
+     void  OnTriggerEnter2D(Collider2D col)
+     {
+     
+      sfxPlayer.PlayOneShot(jump);
+     }
 }
