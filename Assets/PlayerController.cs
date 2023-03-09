@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource sfxPlayer;
     public AudioSource musicPlayer;
 
-    float maxSpeed  = 10.0f;
+    float maxSpeed  = 30.0f;
     bool isOnGround = false;
 
     //Create a reference to the Rigidbody2D so we can manipulate it
@@ -22,9 +22,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         musicPlayer.clip = backgroundMusic;
-      musicPlayer.loop = true;
-      musicPlayer.Play();
+         //musicPlayer.clip = backgroundMusic;
+      //musicPlayer.loop = true;
+      //musicPlayer.Play();
       
         //Find the RigidBody2D component that is attached to the same object as this script
         playerObject = GetComponent<Rigidbody2D>();
@@ -62,6 +62,6 @@ public class PlayerController : MonoBehaviour
      void  OnTriggerEnter2D(Collider2D col)
      {
      
-      sfxPlayer.PlayOneShot(jump);
+      //sfxPlayer.PlayOneShot(jump);
      }
 }
