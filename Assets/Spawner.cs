@@ -28,6 +28,9 @@ public class Spawner : MonoBehaviour
         //If we've counted past the amount of time we need to wait...
         if (timeSinceLastSpawn > timeToNextSpawn)
         {
+            Debug.Log("Time since last spawn = " + timeSinceLastSpawn);
+            Debug.Log("Time to next spawn = " + timeToNextSpawn);
+
             //Use Random.Range to pick a number between 0 and the amount of items we have on our  object list
             int selection = Random.Range(0, objectsToSpawn.Length);
 
